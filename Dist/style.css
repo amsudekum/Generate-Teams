@@ -1,0 +1,34 @@
+*{
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+    background-color: var(--cream);
+}
+
+:root {
+    --blue: rgb(159, 186, 193);
+    --green:  rgb(219, 226, 210);
+    --light: rgb(253, 250, 231);
+    --cream: rgb(247, 234, 199);
+}
+
+#navbar { 
+    background-color: var(--blue);
+    color: var(--light);
+    font-size: 60px;
+   
+}
+
+.cardBody {
+    background-color: var(--light);
+}
+
+.cardHeader {
+    background-color: var(--green);
+    color: var(--light);
+}
+
+.container {
+    margin: 100px auto;
+    justify-content: space-evenly;
+    display: flex;
+}
