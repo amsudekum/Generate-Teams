@@ -1,19 +1,19 @@
 *{
     box-sizing: border-box;
     font-family: system-ui, sans-serif;
-    background-color: var(--cream);
+    background-color: var(--light);
 }
 
 :root {
     --blue: rgb(159, 186, 193);
     --green:  rgb(219, 226, 210);
-    --light: rgb(253, 250, 231);
+    --light: rgb(255, 250, 245);
     --cream: rgb(247, 234, 199);
 }
 
 #navbar { 
     background-color: var(--blue);
-    color: var(--light);
+    color: var(--blue);
     font-size: 60px;
    
 }
