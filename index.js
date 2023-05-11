@@ -1,17 +1,15 @@
 const fs = require('fs');
-const inquirer = require ('inquirer');
-//node
+const inquirer = require('inquirer');
 
-const manager = require('./lib/manager');
-const engineer = require('./lib/engineer');
-const intern = require ('./lib/intern');
-//employee pages
+const Manager = require('./lib/manager');
+const Engineer = require('./lib/engineer');
+const Intern = require('./lib/intern');
+const Employee = require('./lib/employee');
 
-
-
+const html = require('./src/htmlTemplate');
 const teamMembers = [];
 
-const mangerInfo = () => {
+const managerInfo = () => {
     //manager's information
     inquirer
         .prompt([
@@ -36,11 +34,11 @@ const mangerInfo = () => {
                 name: 'officeNum',
             },
         
-        ]).then(createManager => {
-        const createManager = { name, id, email, officeNumber };
-        const manager = new Manager (name, id, email, officeNumber);
-
-        teamMembers.push(manager); 
+        ]).then(managerData => {
+        ({ name, id, email, officeNumber } = managerData);
+        const manager = new Manager(name, id, email, officeNumber);
+        teamMembers.push(manager)
+        miscEmployees(); 
     })
 };
 
@@ -103,29 +101,26 @@ const miscEmployees = () => {
         }
     ])
     .then(employeeData => {
-        // data for employee types 
 
         let { name, id, email, role, github, school, confirmAddEmployee } = employeeData; 
         let employee; 
 
         if (role === "Engineer") {
             employee = new Engineer (name, id, email, github);
-
             console.log(employee);
-
         } else if (role === "Intern") {
             employee = new Intern (name, id, email, school);
-
             console.log(employee);
         }
 
-        teamArray.push(employee); 
+        teamMembers.push(employee); 
 
         if (confirmAddEmployee) {
-            return addEmployee(teamArray); 
+            miscEmployees(); 
         } else {
-            return teamArray;
+            console.log(teamMembers);
         }
     })
-
 };
+
+managerInfo();
