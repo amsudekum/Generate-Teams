@@ -1,4 +1,4 @@
-const engineer = require('../lib/Employee');
+const engineer = require('../lib/engineer');
 
 test('gets github username', () => {
     const engineerGH = 'amsudekum';
@@ -10,5 +10,6 @@ test('gets github username', () => {
 test('gets engineer role', () => {
     const engineer = new Engineer('Engineer');
 
-    expect(engineer.getROle()).toBe('Engineer');
+    expect(engineer.getRole()).toBe('Engineer');
 })
+
