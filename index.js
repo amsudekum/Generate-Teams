@@ -118,9 +118,17 @@ const miscEmployees = () => {
         if (confirmAddEmployee) {
             miscEmployees(); 
         } else {
-            console.log(teamMembers);
+            const generatedHTML = htmlTemplate.generateTeamPage(teamMembers);
+            writeHTMLToFile(generatedHTML);;
         }
     })
 };
-
-managerInfo();
+const writeHTMLToFile = generatedHTML => {
+    fs.writeFile('team.html', generatedHTML, err => {
+      if (err) {
+        console.error(err);
+      } else {
+        console.log('HTML file generated successfully!');
+      }
+    })
+}

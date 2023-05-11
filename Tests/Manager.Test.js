@@ -1,15 +1,15 @@
-const manager = require('../lib/manager');
+const Manager = require('../lib/manager');
 
-test('gets github username', () => {
+test('gets officenumber', () => {
     const managerOfficeNumber = 1;
-    const manager = new manager('Ashley', 29, 1, managerOfficeNumber);
+    const manager = new Manager('Ashley', 29, 1, managerOfficeNumber);
 
-    expect(manager.managerOfficeNumber).toBe(managerOfficeNumber);
+    expect(manager.officeNum).toBe(managerOfficeNumber);
 });
 
 test('gets manager role', () => {
-    const manager = new manager('manager');
+    const manager = new Manager('Ashley', 29, 1, 1);
 
-    expect(manager.getROle()).toBe('manager');
+    expect(manager.getRole()).toBe('Manager');
 });
 
