@@ -118,7 +118,7 @@ const miscEmployees = () => {
         if (confirmAddEmployee) {
             miscEmployees(); 
         } else {
-            const generatedHTML = htmlTemplate.generateTeamPage(teamMembers);
+            const generatedHTML = html.generateTeamPage(teamMembers);
             writeHTMLToFile(generatedHTML);;
         }
     })
