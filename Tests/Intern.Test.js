@@ -1,15 +1,15 @@
-const intern = require('../lib/intern');
+const Intern = require('../lib/intern');
 
-test('gets github username', () => {
-    const internGH = 'amsudekum';
-    const intern = new intern('Ashley', 29, 'amsudekum@gmail.com', internGH);
+test('gets University Namme', () => {
+    const internUni = 'University';
+    const intern = new Intern('Ashley', 29, 'amsudekum@gmail.com', internUni);
 
-    expect(intern.internGH).toBe(internGH);
+    expect(intern.university).toBe(internUni);
 });
 
 test('gets intern role', () => {
-    const intern = new intern('intern');
+    const intern = new Intern('intern');
 
-    expect(intern.getRole()).toBe('intern');
+    expect(intern.getRole()).toBe('Intern');
 })
 
