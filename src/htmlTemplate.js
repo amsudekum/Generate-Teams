@@ -2,27 +2,29 @@ const intern = require("../lib/intern")
 
 const generateManager = function (manager) {
     return `
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-        <h5 class="card-title">${manager.name}</h5>
-        <h4>Manager</h4>
-        <p class="card-text">ID: ${manager.id}</p>
-        <p class="card-text">Email: ${manager.email}</p>
-        <p class="card-text">Office Number: ${manager.officeNum}</p>
+    <div class="mx-auto col-3 mt-3">
+    <div class="card text-center border-dark" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">${manager.name}</h5>
+            <h4>Manager</h4>
+            <p class="card-text">ID: ${manager.id}</p>
+            <p class="card-text">Email: ${manager.email}</p>
+            <p class="card-text">Office Number: ${manager.officeNum}</p>
+        </div>
     </div>
-</div>
+
     `
 }
 
 const generateEngineer = function (engineer) {
     return `
-    <div class="card" style="width: 18rem;">
+    <div class="card text-center border-dark" style="width: 18rem;">
     <div class="card-body">
-        <h5 class="card-title">${engineer.name}</h5>
-        <h4>Manager</h4>
-        <p class="card-text">ID: ${engineer.id}</p>
-        <p class="card-text">Email: ${engineer.email}</p>
-        <p class="card-text">Github: ${engineer.github}</p>
+        <h5 class="card-title">${intern.name}</h5>
+        <h4>Intern</h4>
+        <p class="card-text">ID: ${intern.id}</p>
+        <p class="card-text">Email: ${intern.email}</p>
+        <p class="card-text">University: ${intern.university}</p>
     </div>
 </div>
     `
